@@ -1,0 +1,28 @@
+service: aws-nodejs-ec2-start-stop
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  profile: serverless-admin
+  region: us-east-1
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "ec2:*"
+      Resource: "*"
+
+package:
+  exclude:
+    - backup/**
+
+functions:
+  startInstances:
+    handler: handler.startInstances
+    timeout: 60
+    events:
+      - schedule: cron(0 13 ? * MON-FRI *) # run at 1 PM UTC every day (8am EDT / 9am EST)
+  stopInstances:
+    handler: handler.stopInstances
+    timeout: 60
+    events:
+      - schedule: cron(0 23 ? * MON-FRI *) # run at 11 PM UTC every day (6pm EDT / 7pm EST)

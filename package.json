@@ -1,0 +1,14 @@
+{
+  "name": "nodeawsec2startstop",
+  "version": "1.0.0",
+  "description": "AWS Lambda serverless handler to automate EC2 instance startup/shutdown during off-hours",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Robert N Matesick",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.188.0"
+  }
+}
