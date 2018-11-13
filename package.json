@@ -9,6 +9,6 @@
   "author": "Robert N Matesick",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.188.0"
+    "aws-sdk": "^2.354.0"
   }
 }
